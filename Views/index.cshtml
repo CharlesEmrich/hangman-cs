@@ -1,0 +1,15 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>@Model.GetSecretWord()</h1>
+@foreach(char character in @Model.GetCurrentString())
+  {
+    <span>@character</span><span> </span>
+  }
+
+<form  action="/" method="post">
+  <label for="guess">Guess letter or word</label>
+  <input type="text" name="guess" value="">
+  <button type="submit" name="button">Make a guess</button>
+</form>
