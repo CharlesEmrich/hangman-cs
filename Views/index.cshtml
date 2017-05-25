@@ -8,8 +8,19 @@
     <span>@character</span><span> </span>
   }
 
+<p>
+@foreach(var guess in @Model.GetGuesses())
+{
+  <span>@guess.GetGuessStr()</span>
+}
+</p>
+
+<p>
+You've been wrong @Model.GetFailCounter() times.
+</p>
+
 <form  action="/" method="post">
   <label for="guess">Guess letter or word</label>
-  <input type="text" name="guess" value="">
+  <input type="text" name="guess" value="" autofocus>
   <button type="submit" name="button">Make a guess</button>
 </form>

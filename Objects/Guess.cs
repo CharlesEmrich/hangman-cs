@@ -18,7 +18,6 @@ namespace Hangman.Objects
       } else {
         _word = true;
       }
-      Game.GetGame().GetGuesses().Add(this);
     }
     public string GetGuessStr()
     {

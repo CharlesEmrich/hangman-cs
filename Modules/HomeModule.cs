@@ -14,15 +14,13 @@ namespace Hangman
         Game game = new Game("color");
         return View["index.cshtml", Game.GetGame()];
       };
-      // Post["/"] = _ => {
-      //   Guess guess = new Guess(Request.Form["guess"]);
-      //   game.checkGuess(guess);
-      //
-      //   return View["index.cshtml", game];
-      // };
+      Post["/"] = _ => {
+        Guess guess = new Guess(Request.Form["guess"]);
+        Game.GetGame().SaveGuess(guess);
+        Game.GetGame().checkGuess(guess);
+
+        return View["index.cshtml", Game.GetGame()];
+      };
     }
   }
 }
-//  <h2>
-
-// </h2>
