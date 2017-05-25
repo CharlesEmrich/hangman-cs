@@ -17,7 +17,7 @@ namespace Hangman
       Post["/"] = _ => {
         Guess guess = new Guess(Request.Form["guess"]);
         Game.GetGame().SaveGuess(guess);
-        Game.GetGame().checkGuess(guess);
+        Game.GetGame().CheckGuess(guess);
 
         return View["index.cshtml", Game.GetGame()];
       };

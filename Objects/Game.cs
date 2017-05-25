@@ -50,7 +50,7 @@ namespace Hangman.Objects
     {
       _guesses.Add(guess);
     }
-    public void checkGuess(Guess guess)
+    public void CheckGuess(Guess guess)
     {
       if (_secretWord.Contains(guess.GetGuessStr())  && !guess.GetWord())
       {
@@ -69,7 +69,6 @@ namespace Hangman.Objects
         guess.SetValid(true);
         _currentString = _secretWord;
         Console.WriteLine("Game Over. User Wins.");
-        //they win.
       }
 
       if (!guess.GetValid())
